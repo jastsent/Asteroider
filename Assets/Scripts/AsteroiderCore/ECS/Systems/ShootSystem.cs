@@ -78,24 +78,17 @@ namespace AsteroiderCore.ECS.Systems
                 FlyZone = FlyZone.Everywhere
             };
 
-            var viewObject = _objectPool.GetObject(ObjectType.Bullet);
-            viewObject.transform.localScale = new Vector3(size, size, size);
-            var view = new ViewObject
+            var sizeComponent = new Size
             {
-                ObjectType =  ObjectType.Bullet,
-                GameObject = viewObject
+                Value = size
             };
-            var viewPosition = new ViewPosition();
-            var viewRotation = new ViewRotation();
 
             EcsWorld.AddComponent(newEntity, bullet);
             EcsWorld.AddComponent(newEntity, positionComponent);
             EcsWorld.AddComponent(newEntity, rigidbody);
             EcsWorld.AddComponent(newEntity, collider);
             EcsWorld.AddComponent(newEntity, movable);
-            EcsWorld.AddComponent(newEntity, view);
-            EcsWorld.AddComponent(newEntity, viewPosition);
-            EcsWorld.AddComponent(newEntity, viewRotation);
+            EcsWorld.AddComponent(newEntity, sizeComponent);
         }
     }
 }

@@ -140,15 +140,11 @@ namespace AsteroiderCore.ECS.Systems
                 FlyZone = FlyZone.InsidePortal
             };
 
-            var viewObject = _objectPool.GetObject(ObjectType.Asteroid);
-            viewObject.transform.localScale = new Vector3(size, size, size);
-            var view = new ViewObject
+            var sizeComponent = new Size
             {
-                ObjectType = ObjectType.Asteroid,
-                GameObject = viewObject
+                Value = size
             };
-            var viewPosition = new ViewPosition();
-            var viewRotationAround = new ViewRotationAround { RotationSpeed = Random.Range(-150f, 150f) };
+
             var asteroid = new Asteroid { SplitCount = splitCount };
 
             EcsWorld.AddComponent(newEntity, asteroid);
@@ -156,9 +152,7 @@ namespace AsteroiderCore.ECS.Systems
             EcsWorld.AddComponent(newEntity, rigidbody);
             EcsWorld.AddComponent(newEntity, collider);
             EcsWorld.AddComponent(newEntity, movable);
-            EcsWorld.AddComponent(newEntity, view);
-            EcsWorld.AddComponent(newEntity, viewPosition);
-            EcsWorld.AddComponent(newEntity, viewRotationAround);
+            EcsWorld.AddComponent(newEntity, sizeComponent);
         }
     }
 }

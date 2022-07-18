@@ -134,6 +134,7 @@ namespace AsteroiderCore
             Add<DestroyViewSystem>();
             Add<ShootSystem>();
             Add<ScoreSystem>();
+            Add<ViewSpawnSystem>();
             
             _container
                 .RegisterInstance(new EcsSettings())

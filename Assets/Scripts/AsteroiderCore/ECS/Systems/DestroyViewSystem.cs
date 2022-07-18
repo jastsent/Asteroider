@@ -25,6 +25,7 @@ namespace AsteroiderCore.ECS.Systems
             {
                 var viewObject = entity.Component2;
                 _objectPool.PutObject(viewObject.ObjectType, viewObject.GameObject);
+                EcsWorld.RemoveComponent(entity.Id, viewObject);
             }
         }
 
@@ -35,6 +36,7 @@ namespace AsteroiderCore.ECS.Systems
             {
                 var viewLaser = entity.Component2;
                 _objectPool.PutObject(ObjectType.Laser, viewLaser.LineRenderer.gameObject);
+                EcsWorld.RemoveComponent(entity.Id, viewLaser);
             }
         }
     }

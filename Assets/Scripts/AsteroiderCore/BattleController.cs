@@ -57,7 +57,8 @@ namespace AsteroiderCore
                 
                 .AddSystem(GetSystem<CollideSystem>())
                 .AddSystem(GetSystem<DamageSystem>())
-
+                
+                .AddSystem(GetSystem<ViewSpawnSystem>())
                 .AddSystem(GetSystem<ViewPositionSystem>())
                 .AddSystem(GetSystem<ViewRotationSystem>())
                 .AddSystem(GetSystem<ViewRotationAroundSystem>())

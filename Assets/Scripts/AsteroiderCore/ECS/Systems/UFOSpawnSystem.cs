@@ -88,14 +88,10 @@ namespace AsteroiderCore.ECS.Systems
                 FlyZone = FlyZone.Inside
             };
 
-            var viewObject = _objectPool.GetObject(ObjectType.Ufo);
-            viewObject.transform.localScale = new Vector3(size, size, size);
-            var view = new ViewObject
+            var sizeComponent = new Size
             {
-                ObjectType = ObjectType.Ufo,
-                GameObject = viewObject
+                Value = size
             };
-            var viewPosition = new ViewPosition();
             
             var ufo = new UFO();
 
@@ -104,8 +100,7 @@ namespace AsteroiderCore.ECS.Systems
             EcsWorld.AddComponent(newEntity, rigidbody);
             EcsWorld.AddComponent(newEntity, collider);
             EcsWorld.AddComponent(newEntity, movable);
-            EcsWorld.AddComponent(newEntity, view);
-            EcsWorld.AddComponent(newEntity, viewPosition);
+            EcsWorld.AddComponent(newEntity, sizeComponent);
         }
     }
 }

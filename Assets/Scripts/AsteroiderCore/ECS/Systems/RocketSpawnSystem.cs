@@ -58,6 +58,11 @@ namespace AsteroiderCore.ECS.Systems
                 Direction = Vector2.up,
                 FlyZone = FlyZone.InsidePortal
             };
+            
+            var sizeComponent = new Size
+            {
+                Value = size
+            };
 
             var health = new Health
             {
@@ -80,28 +85,16 @@ namespace AsteroiderCore.ECS.Systems
 
             var score = new Score();
 
-            var viewObject = _objectPool.GetObject(ObjectType.Rocket);
-            viewObject.transform.localScale = new Vector3(size, size, size);
-            var view = new ViewObject
-            {
-                ObjectType = ObjectType.Rocket,
-                GameObject = viewObject
-            };
-            var viewPosition = new ViewPosition();
-            var viewRotation = new ViewRotation();
-
             EcsWorld.AddComponent(newEntity, new Rocket());
             EcsWorld.AddComponent(newEntity, position);
             EcsWorld.AddComponent(newEntity, rigidbody);
             EcsWorld.AddComponent(newEntity, collider);
             EcsWorld.AddComponent(newEntity, movable);
+            EcsWorld.AddComponent(newEntity, sizeComponent);
             EcsWorld.AddComponent(newEntity, health);
             EcsWorld.AddComponent(newEntity, gun);
             EcsWorld.AddComponent(newEntity, laserGun);
             EcsWorld.AddComponent(newEntity, score);
-            EcsWorld.AddComponent(newEntity, view);
-            EcsWorld.AddComponent(newEntity, viewPosition);
-            EcsWorld.AddComponent(newEntity, viewRotation);
         }
     }
 }
