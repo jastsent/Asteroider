@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 262185bbb2db6fb4fb8fc7966640048e, type: 3}
+  m_Name: AsteroiderSettings
+  m_EditorClassIdentifier: 
+  saveFilePath: Assets/Saves
+  saveFileName: gamesave.json
+  <MenuSceneBuildId>k__BackingField: 1
+  <GameSceneBuildId>k__BackingField: 2
+  <RocketPrefab>k__BackingField: {fileID: 1666476409176603155, guid: 1056dead0c1c550418c322b0162d40b9, type: 3}
+  <AsteroidPrefab>k__BackingField: {fileID: 5534107649083279912, guid: 6707c6c0baa91834f9e64e6dfd7f526d, type: 3}
+  <UFOPrefab>k__BackingField: {fileID: 5843994810172359994, guid: 2800cefc4a395e943847738211e5ba65, type: 3}
+  <BulletPrefab>k__BackingField: {fileID: 392937371951896343, guid: 27c5a73f9978c79459da95927118d7bb, type: 3}
+  <LaserPrefab>k__BackingField: {fileID: 3596652549483640643, guid: 3b37ce988d3a0e247b7be16e81d760c9, type: 3}
